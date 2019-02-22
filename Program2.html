@@ -1,14 +1,16 @@
-<HTML>
+<html>
 
 	<head>
+	
+	<!-- This is just to get rid the character encoding warning in Firefox -->
+        <meta charset="utf-8">
 	<!-- link to our script -->
 		<script src = "Program2.js"> </script>
-	
 
 	</head>
 	
 	<!-- do something when the page loads using "onload" -->
-	<body onLoad = "showInstructions()">
+	<body onLoad = "initGame()">
 	
 		<div id = "INSTRUCTIONS">
 			<---- INSTRUCTIONS ----> <br/>
@@ -24,27 +26,33 @@
 			rock crushes scissors."<br/>
 			<br/>
 			<br/>
-			<button id = "START_GAME_BTN" onClick = "showRounds()"> Start Game </button>
+			<button id = "START_GAME_BTN" onClick = "showRounds()"> 
+				Start Game 
+			</button>
 			<br/>
 			<hr/>
 		</div>
 		<br/>
 		<div id = "NO_OF_ROUNDS">
 			How many rounds to play:
-			<input type = "number"/>
+			<input 
+				id = "ROUNDS_TO_PLAY"
+				type = "number"/>
 			<button onClick = "showPlay()"> Play </button>
 		</div>
 		<br/>
-		<div id = "PLAY_FIELD" onLoad= "showRoundsRemaining">
-			Rounds Remaining: <span id="ROUNDS_REM"> </span>
+		<div id = "PLAY_FIELD" onLoad = "showRoundsRemaining">
+			Rounds Remaining: <span id ="ROUNDS_REM">&nbsp;</span>
+			<br/>
+			Human wins: <span id="HUMAN_WINS">&nbsp;</span>
 			<br/>
 			<br/>
 			Make your choice:
-			<button id = "rock"> ROCK </button>
-			<button id = "paper"> PAPER </button>
-			<button id = "scissors"> SCISSORS </button>
-			<button id = "lizard"> LIZARD </button>
-			<button id = "spock"> SPOCK </button>
+			<button name = "rock" onClick = "userChoice(this)" > ROCK </button>
+			<button name = "paper" onClick = "userChoice(this)" > PAPER </button>
+			<button name = "scissors" onClick = "userChoice(this)" > SCISSORS </button>
+			<button name = "lizard" onClick = "userChoice(this)" > LIZARD </button>
+			<button name = "spock" onClick = "userChoice(this)" > SPOCK </button>
 		
 		</div>
 		<br/>
@@ -58,4 +66,4 @@
 
 
 
-</HTML>
+</html>
