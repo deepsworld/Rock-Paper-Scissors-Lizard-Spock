@@ -1,0 +1,61 @@
+<HTML>
+
+	<head>
+	<!-- link to our script -->
+		<script src = "Program2.js"> </script>
+	
+
+	</head>
+	
+	<!-- do something when the page loads using "onload" -->
+	<body onLoad = "showInstructions()">
+	
+		<div id = "INSTRUCTIONS">
+			<---- INSTRUCTIONS ----> <br/>
+			Scissors cuts paper, <br/>
+			paper covers rock, <br/>
+			rock crushes lizard, <br/>
+			lizard poisons Spock, <br/>
+			Spock smashes scissors, <br/>
+			scissors decapitates lizard, <br/>
+			lizard eats paper, <br/>
+			paper disproves Spock,<br/>
+			Spock vaporizes rock, and as it always has, <br/>
+			rock crushes scissors."<br/>
+			<br/>
+			<br/>
+			<button id = "START_GAME_BTN" onClick = "showRounds()"> Start Game </button>
+			<br/>
+			<hr/>
+		</div>
+		<br/>
+		<div id = "NO_OF_ROUNDS">
+			How many rounds to play:
+			<input type = "number"/>
+			<button onClick = "showPlay()"> Play </button>
+		</div>
+		<br/>
+		<div id = "PLAY_FIELD" onLoad= "showRoundsRemaining">
+			Rounds Remaining: <span id="ROUNDS_REM"> </span>
+			<br/>
+			<br/>
+			Make your choice:
+			<button id = "rock"> ROCK </button>
+			<button id = "paper"> PAPER </button>
+			<button id = "scissors"> SCISSORS </button>
+			<button id = "lizard"> LIZARD </button>
+			<button id = "spock"> SPOCK </button>
+		
+		</div>
+		<br/>
+		<div id = "RESULT_FIELD">
+			
+			
+		
+		</div>
+	
+	</body>
+
+
+
+</HTML>
