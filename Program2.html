@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <html>
 
 	<head>
@@ -6,34 +8,41 @@
         <meta charset="utf-8">
 	<!-- link to our script -->
 		<script src = "Program2.js"> </script>
+		
+	<style>
+	.center {
+	margin: auto;
+	width: 60%;
+	border: 3px solid #73AD21;
+	padding: 10px;
+	}
+	
+	img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40%;
+	}
+	</style>
 
 	</head>
 	
 	<!-- do something when the page loads using "onload" -->
 	<body onLoad = "initGame()">
 	
-		<div id = "INSTRUCTIONS">
-			<---- INSTRUCTIONS ----> <br/>
-			Scissors cuts paper, <br/>
-			paper covers rock, <br/>
-			rock crushes lizard, <br/>
-			lizard poisons Spock, <br/>
-			Spock smashes scissors, <br/>
-			scissors decapitates lizard, <br/>
-			lizard eats paper, <br/>
-			paper disproves Spock,<br/>
-			Spock vaporizes rock, and as it always has, <br/>
-			rock crushes scissors."<br/>
+		<div id = "INSTRUCTIONS" class="center">
+			<img  src="https://d3qdvvkm3r2z1i.cloudfront.net/media/catalog/product/cache/1/image/1800x/6b9ffbf72458f4fd2d3cb995d92e8889/r/o/rockpaperscissorslizardspock_newthumb.png"
+			alt="instructions" onClick = "showRounds()" style="width:500px;height:500px;">
 			<br/>
-			<br/>
-			<button id = "START_GAME_BTN" onClick = "showRounds()"> 
-				Start Game 
-			</button>
-			<br/>
+			<b> Click the picture to start play. </b>
 			<hr/>
 		</div>
 		<br/>
-		<div id = "NO_OF_ROUNDS">
+		
+		<div id = "NO_OF_ROUNDS" class="center">
+			<img src="https://d3qdvvkm3r2z1i.cloudfront.net/media/catalog/product/cache/1/image/1800x/6b9ffbf72458f4fd2d3cb995d92e8889/r/o/rockpaperscissorslizardspock_newthumb.png"
+			alt="instructions" style="width:300px;height:300px;">
+			<br/>
 			How many rounds to play:
 			<input 
 				id = "ROUNDS_TO_PLAY"
@@ -41,25 +50,52 @@
 			<button onClick = "showPlay()"> Play </button>
 		</div>
 		<br/>
-		<div id = "PLAY_FIELD" onLoad = "showRoundsRemaining">
+		<br/>
+		
+		<div id = "PLAY_FIELD" onLoad = "showRoundsRemaining" class="center">
+			<img src="https://d3qdvvkm3r2z1i.cloudfront.net/media/catalog/product/cache/1/image/1800x/6b9ffbf72458f4fd2d3cb995d92e8889/r/o/rockpaperscissorslizardspock_newthumb.png"
+			alt="instructions" style="width:300px;height:300px;">
+			<br/>
+			<hr/>
 			Rounds Remaining: <span id ="ROUNDS_REM">&nbsp;</span>
 			<br/>
-			Human wins: <span id="HUMAN_WINS">&nbsp;</span>
+			Computer wins: <span id="COMPUTER_WINS">0</span>
 			<br/>
+			Human wins: <span id="HUMAN_WINS">0</span>
 			<br/>
+			Total ties: <span id="TIES">0</span>
+			<br/>
+			<hr/>
+			<div id = "CHOICE_BTNS" >
 			Make your choice:
-			<button name = "rock" onClick = "userChoice(this)" > ROCK </button>
-			<button name = "paper" onClick = "userChoice(this)" > PAPER </button>
-			<button name = "scissors" onClick = "userChoice(this)" > SCISSORS </button>
-			<button name = "lizard" onClick = "userChoice(this)" > LIZARD </button>
-			<button name = "spock" onClick = "userChoice(this)" > SPOCK </button>
-		
+			<button name = "rock"  onClick = "userChoice(this)" > ROCK </button>
+			<button name = "paper"  onClick = "userChoice(this)" > PAPER </button>
+			<button name = "scissors"  onClick = "userChoice(this)" > SCISSORS </button>
+			<button name = "lizard"  onClick = "userChoice(this)" > LIZARD </button>
+			<button name = "spock"  onClick = "userChoice(this)" > SPOCK </button>
+			<br/>
+			</div>
+			<hr/>
+			<b>Last round results</b>
+			<br/>
+			Computer Chose: <span id ="COMP_CHOICE">&nbsp;</span>
+			<br/>
+			You Chose: <span id ="USER_CHOICE">&nbsp;</span>
+			<br/>
+			The Winner is: <span id ="WINNER">&nbsp;</span>
+			<br/>
+			<hr/>
 		</div>
-		<br/>
-		<div id = "RESULT_FIELD">
+		<br/>	
 			
-			
-		
+		<div id = "RESULT_FIELD" class="center">
+			<img src="http://lobang.club/wp-content/uploads/2018/06/cup-boy-young-athletes-boy-holding-winner-cup-kid-celebrating-his-third-place-cartoon-vector-illustration-on-a-white-background-stock-vector.jpg"
+			alt="instructions" style="width:200px;height:200px;">
+			<br/>
+			<b><span id ="FINAL_WINNER">&nbsp;</span></b>
+			<br/>
+			<br/>
+			<img src="http://pixelartmaker.com/art/26a1b5369fd5fb4.png" onClick = "initGame()" alt="play_again">
 		</div>
 	
 	</body>
