@@ -73,7 +73,7 @@ function userChoice(choice){
 
 // Function to get the random computer choice. 
 function getCompChoice(){
-    var choices = ["rock","paper","scissor","lizard","spock"]
+    var choices = ["rock","paper","scissors","lizard","spock"]
     return choices[Math.floor(Math.random()* 5)];
 }
 
@@ -173,6 +173,12 @@ function showPlay(){
 	
 	gameData.roundsToPlay = getElem("ROUNDS_TO_PLAY").value;
 	gameData.roundsRemaining = getElem("ROUNDS_TO_PLAY").value;
+	if(gameData.roundsToPlay < 1){
+		console.log("Number of rounds cannot be less than 1");
+		initGame();
+		alert("Rounds should be more than 0");
+		throw new Error("STOPPING");
+	}
 	
 	getElem("ROUNDS_REM").innerHTML = gameData.roundsRemaining;
 
