@@ -6,6 +6,14 @@ var gameData = {
 	ties: 0.
 };
 
+var winMatrix = {
+	rock: ["scissors", "lizard"],
+	paper: ["spock", "rock"],
+	scissors: ["paper", "lizard"],
+	spock: ["scissors","rock"],
+	lizard: ["spock","paper"]
+};
+
 
 // function to get the element by ID
 function getElem(id){
@@ -85,24 +93,10 @@ function getRoundWinner(user, computer) {
 	if(user == computer){
 		winner = "tie";
 	}
-	else if(user == "lizard" && computer == "spock" ||
-	   user == "spock" && computer == "scissors" ||
-	   user == "scissors" && computer == "paper" ||
-	   user == "paper" && computer == "rock" ||
-	   user == "rock" && computer == "lizard" ||
-	   user == "scissors" && computer == "lizard" ||
-	   user == "lizard" && computer == "paper" ||
-	   user == "rock" && computer == "scissors" ||
-	   user == "spock" && computer == "rock" ||
-	   user == "paper" && computer == "spock"){
-		   
-		winner = "user";
-		
+	else{
+		var didHumanWin = winMatrix[user].includes(computer);
+		winner = didHumanWin ? "user" : "computer";
 	}
-	else {
-		winner = "computer";
-	}
-	
 	return winner;
 }
 
@@ -129,14 +123,14 @@ function showResults(userWins, compWins, totalTies){
 	getElem("ROUNDS_REM").hidden = true; 
 	
 	if(userWins > compWins){
-		getElem("FINAL_WINNER").innerHTML = "You won, Have fun !";
+		getElem("FINAL_WINNER").innerHTML = "You won, have fun !";
 	}
 	else if(userWins < compWins){
-		getElem("FINAL_WINNER").innerHTML = "Computer won, But you played well !";
+		getElem("FINAL_WINNER").innerHTML = "Computer won, but you played well !";
 		
 	}
 	else{
-		getElem("FINAL_WINNER").innerHTML = "It's a tie, You both rock !";
+		getElem("FINAL_WINNER").innerHTML = "It's a tie, you both rock !";
 	}
 }
 
